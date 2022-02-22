@@ -1,0 +1,55 @@
+Conteudo executado no ipython durante a demo
+
+def funcao():
+	print('Rodando a funcao')
+
+funcao
+# >>> representação do objeto funcao
+type(funcao)
+# >>> <class 'function'>
+
+funcao() # executando a funcao, __call__ / callable
+# equivale a
+funcao.__call__()
+
+x = funcao
+
+x()
+# equivale a funcao()
+
+def outra_funcao(func):
+	func()
+
+outra_funcao(funcao)
+
+
+
+# Executando decorators na mao
+
+# @timer
+# 1- Versão extendida
+my_decorator = timer(common_function)
+print(my_decorator)
+# >>> <function decorators_1.timer.<locals>.wrapper(*args, **kwargs)>
+my_decorator(100000)
+# >>> A função common_function demorou 0.01s para executar
+
+# 2- Versão direta
+timer(common_function)(1000000)
+>>> A função common_function demorou 0.01s para executar
+
+
+# @timer_measure
+# 1- Versão extendida
+my_arg_decorator = timer_measure('segundos')
+my_arg_decorator
+# >>> <function decorators_2.timer_measure.<locals>.timer(func: Callable)>
+my_decorator = my_arg_decorator(common_function)
+my_decorator
+# >>> <function decorators_2.timer_measure.<locals>.timer.<locals>.wrapper(*args, **kwargs)>
+my_decorator(100000)
+# >>> A função common_function demorou 1.19s para executar
+
+# 2- Versão direta
+timer_measure('segundos')(common_function)(100000)
+# >>> A função common_function demorou 0.11s para executar
