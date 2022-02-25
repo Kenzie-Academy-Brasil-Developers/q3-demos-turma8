@@ -16,6 +16,7 @@ def serialize_event(event: dict):
     return event
 
 
+# TODO: Criar condição para avaliar quando o usuário passa apenas 1 chave válida
 def validate_keys(payload: dict, expected_keys: set):
     body_keys_set = set(payload.keys())
 
