@@ -1,3 +1,6 @@
+# COM FIXTURES
+
+
 def test_response_properties(client):
     payload = {"data": [0, 10, -5, 3]}
 

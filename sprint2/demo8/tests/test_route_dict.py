@@ -1,5 +1,6 @@
 from demo_pytest import app
 
+# SEM FIXTURES
 
 # def test_return_status_code():
 #     client = app.test_client()
