@@ -48,7 +48,6 @@ def play(filename: str):
 @app.get("/videos/download/<filename>")
 def download(filename: str):
     extension_format = request.args.get("format")
-    filepath = get_file_path(VIDEOS_DIRECTORY, filename)
 
     if extension_format:
         filename_base = filename.split(".")[0]
@@ -64,5 +63,7 @@ def download(filename: str):
         os.system(command)
 
         return send_file(filepath, as_attachment=True), HTTPStatus.OK
+
+    filepath = get_file_path(VIDEOS_DIRECTORY, filename)
 
     return send_file(filepath, as_attachment=True), HTTPStatus.OK
