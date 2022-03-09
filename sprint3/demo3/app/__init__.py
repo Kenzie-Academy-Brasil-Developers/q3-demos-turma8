@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 from http import HTTPStatus
 
 # Está procurando dir services na raiz do projeto
+# from service import read_json
 from app.services import read_json, write_json
 from app.models.car_model import Car
 
