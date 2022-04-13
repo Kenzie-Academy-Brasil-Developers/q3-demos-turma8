@@ -1,3 +1,4 @@
+-- users
 INSERT INTO users
     (email, birthdate, children, married, account_balance)
 VALUES
@@ -10,7 +11,7 @@ VALUES
 	('ana@email.com', '1979-10-11', 2, TRUE, 80000),
 	('ricardo@email.com', '1989-12-13', 2, TRUE, 20000);
 
-
+-- orders
 INSERT INTO
 	orders (customer_id, order_date)
 VALUES
@@ -19,6 +20,7 @@ VALUES
 	(3, '2021-11-16 12:55:35'), -- ORDER associada ao USER de id 3
 	(3, '2021-11-20 20:02:13'); -- ORDER associada ao USER de id 3
 
+-- invoices
 INSERT INTO invoices
     (release_time, invoice_number, order_id)
 VALUES
@@ -26,3 +28,24 @@ VALUES
     ('2021-11-13 04:03:54', '43634657348657346523441', 2),
     ('2021-11-16 13:15:35', '09345743587970123575483', 3),
     ('2021-11-20 20:31:02', '00534242758346254154238', 4);
+
+-- products
+INSERT INTO products
+    ("name", price)
+VALUES
+	('Fogão', 800),
+    ('Geladeira', 2000),
+    ('Televisão', 3200),
+    ('Forno', 700),
+    ('Panelas', 150);
+
+-- orders_products
+INSERT INTO
+	orders_products (order_id, product_id, sale_value)
+VALUES
+	(1, 1, 750.0),
+    (2, 2, 1500.50),
+    (2, 3, 3000.0),
+    (3, 4, 799.0),
+    (3, 1, 850.50),
+    (4, 1, 800.0);
