@@ -1,0 +1,6 @@
+class InvalidEmailError(Exception):
+    ...
+
+
+class InvalidDateFormatError(Exception):
+    ...
