@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% from 'partials/card_macro.html' import char_card %}
+
+{% block body %}
+
+<div class="row justify-content-center">
+    {% for char_image in images %}
+        {{ char_card(char_image) }}
+    {% endfor %}
+    <!-- {{ char_card(images[0]) }} -->
+</div>
+
+{% endblock body %}
